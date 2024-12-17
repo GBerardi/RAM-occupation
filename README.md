@@ -14,3 +14,6 @@ Numpy:
 What cost a lot of memory:
 - long strings arrays occupy an important amount of memory --> don't save long strings if possible, don't save full paths for example, save only the part that change and save in a different way the repeated part
 - numpy.in1d results in memory picks (search for elements of an array in a second array)
+
+A tool for system level logging from terminal (to be refined)
+- vmstat -SM 1 > memory_usage.log
