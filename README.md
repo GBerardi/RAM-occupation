@@ -17,3 +17,20 @@ What cost a lot of memory:
 
 A tool for system level logging from terminal (to be refined)
 - vmstat -SM 1 > memory_usage.log
+
+A python coding tool, tracemalloc, to print memory change in a slice of code
+```
+# start tracing memory
+tracemalloc.start()
+
+# Your workload here
+large_list = [i for i in range(10000000)]
+
+# get memory info for the workload
+current, peak = tracemalloc.get_traced_memory()
+print(f"Current memory usage: {current / 1024 ** 2:.2f} MB")
+print(f"Peak memory usage: {peak / 1024 ** 2:.2f} MB")
+
+# stop tracemalloc
+tracemalloc.stop()
+```
